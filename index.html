@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Penawaran Situs Web</title>
+    <style>
+        /* Gaya Tampilan CSS Anda */
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #000;
+            color: #fff;
+            padding: 20px;
+            margin: 0;
+        }
+
+        .container {
+            border: 2px solid #ffcc00;
+            padding: 20px;
+            border-radius: 10px;
+            margin: 20px;
+        }
+
+        header {
+            background-color: #333;
+            padding: 20px;
+            text-align: center;
+        }
+
+        h1 {
+            color: #ffcc00;
+        }
+
+        p {
+            font-size: 18px;
+        }
+
+        ul {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        ul li {
+            margin-bottom: 10px;
+        }
+
+        .package {
+            border: 2px solid #ffcc00;
+            border-radius: 10px;
+            padding: 10px;
+            margin: 20px 0;
+        }
+
+        button {
+            background-color: #ffcc00;
+            color: #000;
+            padding: 10px 20px;
+            border: none;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #ff9900;
+        }
+
+        footer {
+            text-align: center;
+            margin-top: 20px;
+        }
+    </style>
+    <script>
+        function sendWhatsAppMessage(number, message) {
+            const whatsappURL = `https://wa.me/${number}?text=${encodeURIComponent(message)}`;
+            window.open(whatsappURL, '_blank');
+        }
+
+        function setGreeting() {
+            const today = new Date();
+            const currentHour = today.getHours();
+            let greeting = "";
+
+            if (currentHour >= 5 && currentHour < 12) {
+                greeting = "Selamat pagi!";
+            } else if (currentHour >= 12 && currentHour < 18) {
+                greeting = "Selamat siang!";
+            } else {
+                greeting = "Selamat malam!";
+            }
+
+            document.getElementById("greeting").textContent = greeting;
+        }
+
+        window.onload = setGreeting;
+    </script>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>🚀 Penawaran Terbatas! Situs Web Bulanan Hanya Rp 1.000 - Rp 10.000! 🚀</h1>
+            <p id="greeting"></p>
+        </header>
+        <main>
+            <p>Ingin situs web yang siap online 24/7 hanya dengan harga <strong>sangat terjangkau</strong> per bulan?</p>
+            <strong>Layanan Kami:</strong>
+            <ul>
+                <li>🌐 <strong>Pembuatan Situs Web Kustom</strong></li>
+                <li>🌐 <strong>Domain Gratis</strong></li>
+                <li>🌐 <strong>Auto Backup</strong></li>
+                <li>🌐 <strong>Dukungan 24/7</strong></li>
+            </ul>
+            
+            <div class="package">
+                <h2>Paket Basic - Rp 1.000/bulan</h2>
+                <ul>
+                    <li><strong>Situs Web Sederhana</strong></li>
+                    <li><strong>Halaman Informasi</strong></li>
+                    <li><strong>Formulir Kontak</strong></li>
+                    <li><strong>Domain Gratis</strong></li>
+                </ul>
+                <button onclick="sendWhatsAppMessage('62857552519342', 'Saya ingin memesan Paket Basic.')">Pesan Sekarang</button>
+            </div>
+
+            <div class="package">
+                <h2>Paket Premium - Rp 5.000/bulan</h2>
+                <ul>
+                    <li><strong>Toko Online Kecil</strong></li>
+                    <li><strong>Integrasi Pembayaran</strong></li>
+                    <li><strong>Desain Kustom</strong></li>
+                    <li><strong>Domain Gratis</strong></li>
+                    <li><strong>Auto Backup</strong></li>
+                </ul>
+                <button onclick="sendWhatsAppMessage('62857552519342', 'Saya ingin memesan Paket Premium.')">Pesan Sekarang</button>
+            </div>
+
+            <div class="package">
+                <h2>Paket Pro - Rp 10.000/bulan</h2>
+                <ul>
+                    <li><strong>Situs Web Bisnis Menengah</strong></li>
+                    <li><strong>Dukungan Tambahan</strong></li>
+                    <li><strong>Domain Gratis</strong></li>
+                    <li><strong>Auto Backup</strong></li>
+                </ul>
+                <button onclick="sendWhatsAppMessage('62857552519342', 'Saya ingin memesan Paket Pro.')">Pesan Sekarang</button>
+            </div>
+
+            <strong>Dapatkan keuntungan dari situs web Anda:</strong>
+            <ul>
+                <li>✅ <strong>Jangkau pelanggan kapan saja</strong></li>
+                <li>✅ <strong>Tingkatkan kehadiran online Anda</strong></li>
+                <li>✅ <strong>Tampilkan produk atau layanan Anda kepada dunia</strong></li>
+            </ul>
+        </main>
+        <footer>
+            <p>© BStore 2023-2024</p>
+        </footer>
+    </div>
+  <script>
+        // Fungsi untuk memeriksa apakah pengguna adalah proxy Cloudflare
+        function isCloudflareProxy() {
+            // Dapatkan nilai header CF-Connecting-IP
+            const cfConnectingIP = request.headers.get("CF-Connecting-IP");
+
+            // Periksa apakah header CF-Connecting-IP ada (pengguna adalah proxy Cloudflare)
+            if (cfConnectingIP !== null) {
+                // Pengguna adalah proxy Cloudflare, arahkan ke halaman anti-proxy.html
+                window.location.href = "/anti-proxy.html"; // Gantilah dengan halaman anti-proxy Anda
+                return true;
+            }
+
+            // Pengguna bukan proxy Cloudflare
+            return false;
+        }
+
+        // Panggil fungsi untuk memeriksa pengguna saat halaman dimuat
+        window.onload = isCloudflareProxy;
+  </script>
+</body>
+</html>
