@@ -191,31 +191,7 @@
   </script>
   <!-- Tambahkan ini di dalam tag <script> yang ada di dalam <head> -->
 <script>
-    function updateCountdown() {
-        const now = new Date();
-        const targetTime = new Date(now.getTime() + 24 * 60 * 60 * 1000); // Waktu sekarang ditambah 24 jam
-        const countdown = targetTime - now;
 
-        if (countdown > 0) {
-            const hours = Math.floor(countdown / (60 * 60 * 1000));
-            const minutes = Math.floor((countdown % (60 * 60 * 1000)) / (60 * 1000));
-            const seconds = Math.floor((countdown % (60 * 1000)) / 1000);
-
-            const countdownLabel = `Hanya tersisa ${hours} jam ${minutes} menit ${seconds} detik`;
-            document.getElementById("countdown").textContent = countdownLabel;
-        } else {
-            // Jika waktu sudah habis
-            document.getElementById("countdown").textContent = "Waktu habis!";
-        }
-    }
-
-    // Panggil fungsi setGreeting saat halaman dimuat
-    window.onload = function () {
-        setGreeting();
-        updateCountdown(); // Panggil untuk menghitung countdown saat halaman dimuat
-        setInterval(updateCountdown, 1000); // Perbarui setiap 1 detik
-    };
-</script>
     
 </body>
 </html>
