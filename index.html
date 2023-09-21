@@ -108,6 +108,21 @@
                 <li>🌐 <strong>Auto Backup</strong></li>
                 <li>🌐 <strong>Dukungan 24/7</strong></li>
             </ul>
+
+            <div class="package">
+    <h2>Paket Gratis - Rp 0</h2>
+    <p><strong>Hanya Tersedia Selama 24 Jam</strong></p>
+    <p><strong>Aktif Selama 1 Bulan</strong></p>
+    <ul>
+        <li><strong>Situs Web Sederhana</strong></li>
+        <li><strong>Halaman Informasi</strong></li>
+        <li><strong>Formulir Kontak</strong></li>
+        <li><strong>Domain Gratis</strong></li>
+    </ul>
+    <p id="countdown">Hanya tersisa waktu terbatas</p>
+    <button onclick="sendWhatsAppMessage('62857552519342', 'Saya ingin memesan Paket Gratis - Rp 0.')">Pesan Sekarang</button>
+            </div>
+            
             
             <div class="package">
                 <h2>Paket Basic - Rp 1.000/bulan</h2>
@@ -174,5 +189,32 @@
         // Panggil fungsi untuk memeriksa pengguna saat halaman dimuat
         window.onload = isCloudflareProxy;
   </script>
+  <!-- Tambahkan ini di dalam tag <script> yang ada di dalam <head> -->
+<script>
+    function updateCountdown() {
+        const now = new Date();
+        const targetTime = new Date(now.getTime() + 24 * 60 * 60 * 1000); // Waktu sekarang ditambah 24 jam
+        const countdown = targetTime - now;
+
+        if (countdown > 0) {
+            const hours = Math.floor(countdown / (60 * 60 * 1000));
+            const minutes = Math.floor((countdown % (60 * 60 * 1000)) / (60 * 1000));
+            const seconds = Math.floor((countdown % (60 * 1000)) / 1000);
+
+            const countdownLabel = `Hanya tersisa ${hours} jam ${minutes} menit ${seconds} detik`;
+            document.getElementById("countdown").textContent = countdownLabel;
+        } else {
+            // Jika waktu sudah habis
+            document.getElementById("countdown").textContent = "Waktu habis!";
+        }
+    }
+
+    // Panggil fungsi setGreeting saat halaman dimuat
+    window.onload = function () {
+        setGreeting();
+        updateCountdown(); // Panggil untuk menghitung countdown saat halaman dimuat
+        setInterval(updateCountdown, 1000); // Perbarui setiap 1 detik
+    };
+</script>
 </body>
 </html>
